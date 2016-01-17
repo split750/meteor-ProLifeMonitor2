@@ -1,0 +1,32 @@
+<nav class="main-menu">
+  <div class="max-width">
+    <div class="col-sm-3 col-xs-12 brand">
+      <a class="" ui-sref="home">Digital <span>Card</span></a>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" ng-click="revealCollapsed = !revealCollapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" collapse="!revealCollapsed">
+      <div class="col-sm-5 col-xs-12 navigation">
+        <div  >
+          <a class="" ng-repeat="route in routes" ng-show="currentUser && currentUser.profile.name" ui-sref-active="active" ui-sref="{{route}}">{{route}}</a>
+        </div>
+      </div>
+      <div class="col-sm-4 col-xs-12 right">
+        <div class="" ng-show="(!currentUser || !currentUser.profile.name) && !loggingIn">
+          <a class="menu-button primary" ng-click="openLoginModal()">Login</a>
+          <a class="menu-button secondary" ng-click="openSignupModal()">Register</a>
+        </div>
+        <div ng-show="currentUser && currentUser.profile.name">
+          <p class="">Signed in as <a ui-sref="profile">{{currentUser.profile.name}}</a></p>
+          <a class="menu-button warning" href="" ng-click="logout()">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+

@@ -1,0 +1,33 @@
+<div class="text-center">About</div>
+
+<form class="col-xs-12">
+	<div class="row">
+		<div class="col-md-12 container-main">
+			<div class="container-title">
+				<h1>Edit your profil</h1>
+			</div>
+			<h3><span class="semi-bold">Personnal</span> information</h3>
+			<p>user id : {{aboutctrl.user._id}}</p>
+			<p>user id 2: {{aboutctrl.user.profile.organization}}</p>
+			<div class="row">
+				<div class="col-sm-6">
+					<fieldset class="form-group">
+			        	<label for="firstName">First Name</label>
+			        	<input class="form-control" type="text" id="firstName" name="firstName" placeholder="Enter your First name" ng-model="profil.firstname">
+			        </fieldset>
+			    </div>
+			    <div class="col-sm-6">
+					<fieldset class="form-group">
+			        	<label for="lastName">Last Name</label>
+			        	<input class="form-control" type="text" id="lastName" name="lastName" placeholder="Enter your Last name" ng-model="profile.lastname">
+			        </fieldset>
+			    </div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+      <div class="col-md-12 container-main text-center saveProfil">
+        <input type="submit" value="{{isSubmitting ? 'saving profil...' : 'Save profil'}}" class="btn btn-primary" ng-click="updateProfil(profil)" ng-disabled="isSubmitting">
+      </div>
+    </div>
+</form>
